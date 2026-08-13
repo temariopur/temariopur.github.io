@@ -1,0 +1,32 @@
+{
+  "name": "PUR URUGUAY - 71 Temas + Planificador",
+  "short_name": "PUR UY",
+  "description": "Planificador 71 temas oficiales PUR 2023, temario completo y 12 playlists PUR-CIR. Guarda tu progreso.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfcfb",
+  "theme_color": "#0f766e",
+  "orientation": "portrait",
+  "lang": "es-UY",
+  "categories": ["education", "medical"],
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
