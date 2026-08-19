@@ -25,6 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="keywords" content="temario pur, temario pur uruguay, temario prueba unica de residencia, prueba unica residencia uruguay, 71 temas pur">
 <meta name="robots" content="index, follow">
 <meta name="color-scheme" content="light">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <link rel="canonical" href="https://temariopur.github.io/">
 <meta property="og:site_name" content="PUR URUGUAY">
 <meta property="og:url" content="https://temariopur.github.io/">
@@ -661,8 +662,8 @@ renderBlocks();renderTemario();renderPlaylists();
 // Registrar Service Worker para PWA offline
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').then(reg => {
-      console.log('SW registrado', reg.scope);
+    navigator.serviceWorker.register('./sw.js?v=4').then(reg => {
+      console.log('SW v4 registrado', reg.scope); reg.onupdatefound = () => { const nw = reg.installing; nw.onstatechange = () => { if (nw.state === 'installed' && navigator.serviceWorker.controller) window.location.reload(); }; };
     }).catch(err => console.log('SW error', err));
   });
 }
