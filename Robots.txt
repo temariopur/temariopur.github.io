@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://temariopur.github.io/sitemap.xml
