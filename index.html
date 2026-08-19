@@ -162,6 +162,109 @@ html.dark .card-shadow{box-shadow:0 1px 3px rgba(0,0,0,0.2),0 8px 24px rgba(0,0,
   body{ padding-left:max(0px, env(safe-area-inset-left)); padding-right:max(0px, env(safe-area-inset-right)); }
 }
 
+
+/* === FIX CONTADOR + PLAYLISTS - MODO CLARO Y OSCURO === */
+
+/* Contador - base claro mejorado */
+#pur-countdown > div{
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 50%, #cffafe 100%) !important;
+  border-color: #a7f3d0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04) !important;
+}
+#pur-countdown .font-black.text-\[13px\]{
+  color: #0f172a !important;
+  letter-spacing: -0.01em;
+}
+#pur-countdown .text-\[11px\].text-slate-500{
+  color: #475569 !important;
+  font-weight: 600;
+}
+#pur-countdown #countdown-timer > div{
+  background: white !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+}
+#pur-countdown #countdown-timer > div .mono{
+  color: #0f172a !important;
+}
+#pur-countdown #countdown-timer > div .text-\[10px\]{
+  color: #64748b !important;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+#pur-countdown #countdown-timer > div.bg-teal-600{
+  background: #0f766e !important;
+  border-color: #0f766e !important;
+}
+#pur-countdown #countdown-timer > div.bg-teal-600 .mono,
+#pur-countdown #countdown-timer > div.bg-teal-600 .text-\[10px\]{
+  color: white !important;
+}
+
+/* Contador - oscuro (ya se veía bien, lo pulimos) */
+html.dark #pur-countdown > div{
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  border-color: #1e293b !important;
+}
+html.dark #pur-countdown .font-black.text-\[13px\]{
+  color: #f1f5f9 !important;
+}
+html.dark #pur-countdown .text-\[11px\].text-slate-500{
+  color: #94a3b8 !important;
+}
+html.dark #pur-countdown #countdown-timer > div{
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+html.dark #pur-countdown #countdown-timer > div .mono{
+  color: #f8fafc !important;
+}
+html.dark #pur-countdown #countdown-timer > div .text-\[10px\]{
+  color: #94a3b8 !important;
+}
+
+/* Playlist card - ¿Querés ver las playlists completas? */
+#view-playlists .rounded-\[24px\]{
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+#view-playlists .rounded-\[24px\] > div.p-6{
+  background: #ffffff !important;
+}
+#view-playlists .rounded-\[24px\] > div.p-6 h3{
+  color: #0f172a !important;
+}
+#view-playlists .rounded-\[24px\] > div.p-6 p{
+  color: #475569 !important;
+}
+#view-playlists .rounded-\[24px\] > div.p-6 a{
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border: 1px solid #0f172a !important;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.15) !important;
+}
+
+/* Playlist card - oscuro */
+html.dark #view-playlists .rounded-\[24px\]{
+  background: #0f172a !important;
+  border-color: #1e293b !important;
+}
+html.dark #view-playlists .rounded-\[24px\] > div.p-6{
+  background: #0f172a !important;
+}
+html.dark #view-playlists .rounded-\[24px\] > div.p-6 h3{
+  color: #f8fafc !important;
+}
+html.dark #view-playlists .rounded-\[24px\] > div.p-6 p{
+  color: #94a3b8 !important;
+}
+html.dark #view-playlists .rounded-\[24px\] > div.p-6 a{
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+}
+
 </style>
 
 <script type="application/ld+json">
