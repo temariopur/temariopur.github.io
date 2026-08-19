@@ -74,6 +74,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .topic-card{transition:all .25s}
 .topic-card.done{border-color:#a7f3d0 !important;background:linear-gradient(135deg,#ecfdf5 0%,#f0fdfa 100%)}
 .topic-card.rep{border-color:#fde68a !important;background:linear-gradient(135deg,#fffbeb 0%,#fefce8 100%)}
+
+/* === MODO OSCURO + CAFECITO - AGREGADO === */
+html.dark{color-scheme:dark}
+html.dark body{background:#020617;color:#e2e8f0}
+html.dark header{background:rgba(2,6,23,0.85)!important;border-color:rgba(30,41,59,0.6)!important;backdrop-filter:blur(20px)}
+html.dark .bg-white{background:#0f172a!important}
+html.dark .bg-slate-50, html.dark .bg-blue-50, html.dark .bg-teal-50, html.dark .bg-fuchsia-50, html.dark .bg-red-50, html.dark .bg-emerald-50, html.dark .bg-amber-50, html.dark .bg-orange-50{background:#1e293b!important}
+html.dark .bg-slate-100{background:#1e293b!important}
+html.dark .border-slate-100{border-color:#1e293b!important}
+html.dark .border-slate-200{border-color:#1e293b!important}
+html.dark .text-slate-400{color:#94a3b8!important}
+html.dark .text-slate-500{color:#94a3b8!important}
+html.dark .text-slate-600{color:#cbd5e1!important}
+html.dark .card-shadow{box-shadow:0 1px 3px rgba(0,0,0,0.2),0 8px 24px rgba(0,0,0,0.3)}
+
 </style>
 
 <script type="application/ld+json">
@@ -124,10 +139,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="w-10 h-10 rounded-[12px] bg-[#0f0f0f] text-white flex items-center justify-center font-black text-[13px] tracking-tighter shadow-sm">PUR</div>
 <div>
 <div class="font-black text-[16px] tracking-[-0.02em] leading-none">PUR URUGUAY</div>
-<div class="text-[11px] font-semibold tracking-wide text-slate-400 mt-1">71 TEMAS • 2023 • PRO</div>
+<div class="text-[11px] font-semibold tracking-wide text-slate-400 mt-1">71 TEMAS</div>
 </div>
 </div>
 <div class="hidden lg:flex items-center gap-4">
+<div class="flex items-center gap-2">
+  <button id="darkToggle" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-[14px] transition" aria-label="Cambiar tema">🌙</button>
+  <a href="https://link.mercadopago.com.uy/miguesa" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-900 text-[12px] font-bold transition">☕ Cafecito</a>
+</div>
 <div class="flex items-center gap-3 pl-4 pr-1 py-1 rounded-full bg-slate-50 border border-slate-100">
 <div class="text-right leading-none"><div class="text-[10px] font-black tracking-widest text-slate-400">PROGRESO</div><div id="progressTextDesk" class="mono font-bold text-[13px] mt-1">0/71 • 0%</div></div>
 <div class="w-[52px] h-[52px] rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center relative">
@@ -139,6 +158,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="lg:hidden flex items-center gap-2.5">
 <div class="w-10 h-10 rounded-full bg-slate-900 text-white flex items-center justify-center mono font-bold text-[11px]" id="progressMobCircle">0%</div>
 <div class="leading-none"><div class="text-[10px] font-black tracking-widest text-slate-400">AVANCE</div><div id="progressTextMob" class="mono font-bold text-[13px] mt-1">0/71</div></div>
+<div class="flex items-center gap-1.5 ml-2">
+  <button id="darkToggleMobile" class="w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-[14px]" aria-label="Cambiar tema">🌙</button>
+  <a href="https://link.mercadopago.com.uy/miguesa" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-amber-100 flex items-center justify-center text-[14px] font-bold">☕</a>
+</div>
 </div>
 </div>
 <div class="hidden lg:flex max-w-[1120px] mx-auto px-6 gap-1 py-2">
@@ -146,7 +169,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button type="button" onclick="switchTab('temario')" id="tab-temario-desk" class="border-b-2 border-transparent text-slate-400 px-4 py-2.5 text-[13px] font-bold hover:text-slate-700">Temario oficial</button>
 <button type="button" onclick="switchTab('playlists')" id="tab-playlists-desk" class="border-b-2 border-transparent text-slate-400 px-4 py-2.5 text-[13px] font-bold hover:text-slate-700">Playlists</button>
 </div>
-</header>
+</header><div id="pur-countdown" class="max-w-[1120px] mx-auto px-5 lg:px-6 mt-4"><div class="rounded-[20px] border border-teal-100 bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-slate-900 dark:border-slate-800 p-4 flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-[14px] bg-[#0f766e] text-white flex items-center justify-center">⏳</div><div><div class="font-black text-[13px]">PUR 2026 — 5 DE NOVIEMBRE DE 2026</div><div class="text-[11px] text-slate-500">Faltan para la prueba</div></div></div><div class="flex gap-2" id="countdown-timer"><div class="bg-white dark:bg-slate-800 rounded-[14px] px-3.5 py-2 text-center min-w-[64px]"><div class="mono font-black text-[18px]" id="cd-days">--</div><div class="text-[10px]">DÍAS</div></div><div class="bg-white dark:bg-slate-800 rounded-[14px] px-3.5 py-2 text-center min-w-[64px]"><div class="mono font-black text-[18px]" id="cd-hours">--</div><div class="text-[10px]">HORAS</div></div><div class="bg-white dark:bg-slate-800 rounded-[14px] px-3.5 py-2 text-center min-w-[64px]"><div class="mono font-black text-[18px]" id="cd-mins">--</div><div class="text-[10px]">MIN</div></div><div class="bg-teal-600 text-white rounded-[14px] px-3.5 py-2 text-center min-w-[64px]"><div class="mono font-black text-[18px]" id="cd-secs">--</div><div class="text-[10px]">SEG</div></div></div></div></div>
 
 <main class="max-w-[1120px] mx-auto px-5 lg:px-6 py-6">
 <div id="view-plan">
@@ -176,10 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div id="temarioList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 </div>
 
-<div id="view-playlists" class="hidden">
-<div class="mb-6"><h1 class="text-[26px] font-black tracking-[-0.02em]">Playlists PUR-CIR</h1><p class="text-[13px] text-slate-500 mt-1">12 playlists curadas. Tocá y abrí en YouTube.</p></div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="playlistGrid"></div>
-</div>
+<div id="view-playlists" class="hidden"><div class="mb-6"><h1 class="text-[26px] font-black">Videos PUR Uruguay</h1><p class="text-[13px] text-slate-500 mt-1">Clases completas organizadas por materia.</p></div><div class="rounded-[24px] border border-slate-100 card-shadow overflow-hidden bg-white dark:bg-slate-900"><div class="relative"><img src="banner.webp" alt="Videos PUR Uruguay" class="w-full h-[260px] lg:h-[380px] object-cover"><div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div><div class="absolute bottom-0 left-0 right-0 p-6"><div class="inline-flex px-3 py-1 rounded-full bg-white/90 text-[10px] font-black">100% GRATIS • 513+ VIDEOS</div><h2 class="font-black text-[24px] text-white mt-2">VIDEOS PUR<br>URUGUAY</h2></div></div><div class="p-6 flex flex-col lg:flex-row justify-between gap-4"><div><h3 class="font-black">¿Querés ver las playlists completas?</h3><p class="text-[13px] text-slate-500 mt-1">Todo centralizado en Videos PUR Uruguay.</p></div><a href="https://videospururuguay.github.io/" target="_blank" class="px-7 py-3.5 rounded-full bg-[#0f172a] text-white font-black text-[13px]">▶ Ver en Videos PUR Uruguay</a></div></div><div id="playlistGrid" class="hidden"></div></div>
 </main>
 
 <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-2xl border-t border-slate-100/80">
@@ -312,7 +332,7 @@ const groups=[
 ];
 let html=""; 
 groups.forEach(g=>{
-const list=temas.filter(t=>t.bloque===g.key && (t.t+" "+t.desc).toLowerCase().includes(q));
+const qLower=q.toLowerCase(); const bloqueMatch=g.name.toLowerCase().includes(qLower)||g.key.toLowerCase().includes(qLower)||g.desc.toLowerCase().includes(qLower); const list=temas.filter(t=>t.bloque===g.key && (bloqueMatch || (t.t+" "+t.desc).toLowerCase().includes(qLower)));
 if(list.length===0) {
   if(q) return;
 }
@@ -438,9 +458,7 @@ function renderTemario(){
   const list=temas.filter(t=>(t.t+" "+t.desc).toLowerCase().includes(q)&&(!f||t.bloque===f));
   document.getElementById('temarioList').innerHTML=list.map(t=>`<div class="bg-white rounded-[20px] border border-slate-100 card-shadow p-5 flex flex-col card-shadow-hover"><div class="flex justify-between items-start"><span class="text-[10px] font-black tracking-widest px-2.5 py-1 rounded-full bg-[#111] text-white">${t.bloque}</span><span class="mono text-[10px] text-slate-400">#${t.id}</span></div><div class="font-black text-[15px] mt-3 leading-tight tracking-tight">${escapeHtml(t.t)}</div><div class="text-[12px] text-slate-500 mt-1.5 leading-snug flex-1">${escapeHtml(t.desc)}</div><div class="mt-4 flex items-center justify-between"><span class="text-[11px] font-bold text-slate-300">PUR 2023</span><span class="text-[11px] text-slate-400">${t.bloque}</span></div></div>`).join('') || '<div class="text-center col-span-3 py-10 text-slate-400 text-[13px]">Sin resultados</div>';
 }
-function renderPlaylists(){
-  document.getElementById('playlistGrid').innerHTML=playlists.map(p=>`<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-[22px] border border-slate-100 card-shadow overflow-hidden card-shadow-hover"><div class="h-[4px] ${p.color}"></div><div class="p-5"><div class="flex gap-3.5"><div class="w-12 h-12 rounded-[14px] ${p.color} text-white flex items-center justify-center text-[20px] shadow-sm">${p.icon}</div><div class="flex-1 min-w-0"><div class="font-black text-[14px] leading-tight tracking-tight">${p.title}</div><div class="text-[11px] font-black tracking-widest text-slate-400 mt-1">${p.bloque}</div></div><div class="w-9 h-9 rounded-full bg-slate-50 group-hover:bg-[#111] group-hover:text-white flex items-center justify-center transition font-bold">↗</div></div><div class="mt-4 text-[12px] text-slate-600 leading-snug bg-gradient-to-br ${p.accent} rounded-[14px] p-3.5 border border-slate-50">${escapeHtml(p.desc)}</div><div class="mt-4 flex items-center gap-2"><span class="text-[11px] font-black px-3 py-1 rounded-full bg-[#111] text-white">YouTube</span><span class="text-[11px] font-bold text-slate-400 group-hover:text-slate-700">Abrir →</span></div></div></a>`).join('');
-}
+function renderPlaylists(){ const g=document.getElementById('playlistGrid'); if(g) g.innerHTML=''; }
 
 const debouncedBlocks = debounce(renderBlocks, 200);
 const debouncedTemario = debounce(renderTemario, 200);
@@ -470,5 +488,31 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
-</body>
+
+<script>
+// === MODO OSCURO - IGUAL A CAPTURA VIDEOS PUR ===
+(function(){
+  const htmlEl = document.documentElement;
+  const saved = localStorage.getItem('temario-dark');
+  if(saved === '1' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    htmlEl.classList.add('dark');
+  }
+  function updateIcons(){
+    const isDark = htmlEl.classList.contains('dark');
+    document.querySelectorAll('#darkToggle, #darkToggleMobile').forEach(b=>{
+      if(b) b.textContent = isDark ? '☀️' : '🌙';
+    });
+  }
+  updateIcons();
+  function toggleDark(){
+    htmlEl.classList.toggle('dark');
+    localStorage.setItem('temario-dark', htmlEl.classList.contains('dark') ? '1' : '0');
+    updateIcons();
+  }
+  document.getElementById('darkToggle')?.addEventListener('click', toggleDark);
+  document.getElementById('darkToggleMobile')?.addEventListener('click', toggleDark);
+})();
+</script>
+
+<script>(function(){const t=new Date("2026-11-05T09:00:00-03:00").getTime(),d=document.getElementById("cd-days"),h=document.getElementById("cd-hours"),m=document.getElementById("cd-mins"),s=document.getElementById("cd-secs");if(!d)return;function u(){let diff=t-Date.now();if(diff<=0){d.textContent="0";h.textContent="00";m.textContent="00";s.textContent="00";return;}let days=Math.floor(diff/86400000);diff-=days*86400000;let hours=Math.floor(diff/3600000);diff-=hours*3600000;let mins=Math.floor(diff/60000);diff-=mins*60000;let secs=Math.floor(diff/1000);d.textContent=days;h.textContent=String(hours).padStart(2,"0");m.textContent=String(mins).padStart(2,"0");s.textContent=String(secs).padStart(2,"0");}u();setInterval(u,1000);})();</script></body>
 </html>
