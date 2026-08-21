@@ -78,6 +78,9 @@ html.dark{color-scheme:dark}
 html.dark body{background:#020617;color:#e2e8f0}
 html.dark header{background:rgba(2,6,23,0.85)!important;border-color:rgba(30,41,59,0.6)!important;backdrop-filter:blur(20px)}
 html.dark .bg-white{background:#0f172a!important}
+/* FIX CAFECITO - siempre blanco en dark mode */
+html.dark .cafecito-btn, html.dark a .cafecito-btn, html.dark span.cafecito-btn{background:#ffffff!important; color:#0f172a!important; border-color:#ffffff!important}
+html.dark .cafecito-btn span{color:#0f172a!important}
 html.dark .bg-slate-50, html.dark .bg-blue-50, html.dark .bg-teal-50, html.dark .bg-fuchsia-50, html.dark .bg-red-50, html.dark .bg-emerald-50, html.dark .bg-amber-50, html.dark .bg-orange-50{background:#1e293b!important}
 html.dark .bg-slate-100{background:#1e293b!important}
 html.dark .border-slate-100{border-color:#1e293b!important}
@@ -411,9 +414,29 @@ html.dark #view-playlists .rounded-\[24px\] > div.p-6 a{
 </div>
 
 
-<section class="max-w-5xl mx-auto px-5 py-12 mt-8 bg-white rounded-[24px] border border-slate-100">
-  <h2 class="text-[22px] font-black mb-4">Temario PUR 2026 - Temario PUR Uruguay completo</h2>
-  <p class="text-slate-600 leading-relaxed">Este es el <strong>temario PUR 2026</strong> oficial con los <strong>71 temas del temario PUR Uruguay</strong> para la <strong>Prueba Unica de Residencia</strong>. Si buscas el <strong>temario prueba unica de residencia</strong> actualizado, aca tenes todo el programa oficial 2026.</p>
+<section class="max-w-5xl mx-auto px-4 py-4 mt-4 bg-white rounded-[16px] border border-slate-100">
+  <h2 class="text-[14px] font-bold mb-1.5 leading-tight">Temario PUR 2026 - Temario PUR Uruguay completo</h2>
+  <p class="text-slate-500 text-[12px] leading-[1.5]">Este es el <strong>temario PUR 2026</strong> oficial con los <strong>71 temas del temario PUR Uruguay</strong> para la <strong>Prueba Unica de Residencia</strong>. Si buscas el <strong>temario prueba unica de residencia</strong> actualizado, aca tenes todo el programa oficial 2026.</p>
+</section>
+
+<!-- BANNER CAFECITO - Agregado debajo del temario SEO -->
+<section class="max-w-5xl mx-auto mt-3 rounded-[16px] border border-slate-100 bg-[#0a0a0a] overflow-hidden relative group hover:border-amber-500/30 transition-all duration-300">
+  <a href="https://link.mercadopago.com.uy/miguesa" target="_blank" rel="noopener" class="block relative px-4 py-4">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-950/40 via-[#0a0a0a] to-[#0a0a0a]"></div>
+    <div class="absolute inset-0 opacity-30" style="background: radial-gradient(50% 100% at 0% 0%, rgba(245,158,11,.35) 0%, transparent 70%)"></div>
+    <div class="relative flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3 text-left">
+        <div class="w-10 h-10 rounded-xl overflow-hidden border border-amber-500/20 shadow-[0_8px_20px_rgba(245,158,11,.25)] shrink-0 bg-gradient-to-br from-teal-900 to-teal-700 flex items-center justify-center text-[18px]">☕</div>
+        <div>
+          <div class="font-extrabold text-white text-[13px] leading-tight tracking-tight">¿Te sirvió para estudiar?</div>
+          <div class="text-[11px] text-zinc-400 mt-0.5 font-medium">Apoyá el proyecto con un cafecito 🇺🇾</div>
+        </div>
+      </div>
+      <span class="shrink-0 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white text-slate-900 font-bold text-[11px] cafecito-btn" style="background:#ffffff!important;color:#0f172a!important" shadow-[0_8px_20px_rgba(0,0,0,.25)] group-hover:translate-y-[-1px] transition-all">
+        Invitar cafecito <span>→</span>
+      </span>
+    </div>
+  </a>
 </section>
 </main>
 
@@ -690,7 +713,7 @@ renderBlocks();renderTemario();renderPlaylists();
 <div><h3 class="font-bold text-[12px]">Bloques</h3><p class="text-[12px] text-slate-500 mt-2">PNA 1-10, Pediatría 11-20, Gineco 21-34, Clínica 35-48, Salud Mental 49-54, Legal 55-57, Bioética 58-60, Quirúrgica 61-71.</p></div>
 <div><h3 class="font-bold text-[12px]">Recursos</h3><p class="text-[12px] text-slate-500 mt-2">Playlists Medicina Interna, Familiar, Ginecología, Pediatría, Cirugía, Bioética, Psiquiatría, RCP Adulto, RCP Pediátrico y Encares 2023-2026.</p></div>
 </div>
-<div class="mt-8 pt-6 border-t border-slate-100 text-[11px] text-slate-400">© <span id="y"></span> PUR URUGUAY • temariopur.github.io • Hecho para celular</div>
+<div class="mt-8 pt-6 border-t border-slate-100 text-[11px] text-slate-400">© <span id="y"></span> PUR URUGUAY • temariopur.github.io</div>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </footer>
 <script>
